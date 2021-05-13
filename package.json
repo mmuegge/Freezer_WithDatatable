@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap": "4.6.0",
+    "datatables.net": "^1.10.24",
+    "datetime-js": "^4.0.0",
+    "moment": "^2.29.1",
+    "sweetalert2": "^10.16.6"
+  }
+}

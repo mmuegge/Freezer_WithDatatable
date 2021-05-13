@@ -1,0 +1,93 @@
+﻿@model Freezer_MVC.Models.Food;
+
+<br />
+<h2 class="text-info">@(Model.Id!=0 ? "Bearbeiten " : "Anlegen ")Datensatz</h2>
+<br />
+
+<div class="border container" style="padding:30px">
+    <form method="post" asp-action="Upsert">
+        @if (Model.Id != 0)
+        {
+            <input type="hidden" asp-for="Id" />
+        }
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Amount"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="DateIn"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="DateIn" class="form-control" />
+                <span asp-validation-for="DateIn" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="BestBeforeDate"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="BestBeforeDate" class="form-control" />
+                <span asp-validation-for="BestBeforeDate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="FoodSupplierId"></label>
+            </div>
+            <div class="col-6">
+                @*<input asp-for="FoodSupplierId" class="form-control" />*@
+                <select asp-for="FoodSupplierId" class="form-control" asp-items="ViewBag.FoodSupplierId"></select>
+                <span asp-validation-for="FoodSupplierId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="FoodGroupId"></label>
+            </div>
+            <div class="col-6">
+                @*<input asp-for="FoodGroupId" class="form-control" />*@
+                <select asp-for="FoodGroupId" class="form-control" asp-items="ViewBag.FoodGroupId"></select>
+                <span asp-validation-for="FoodGroupId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <button type="submit" class="btn btn-primary form-control">
+                    @*@(Model.Id!=0 ? "Speichern " : "Anlegen ")*@
+                    Speichern
+                </button>
+            </div>
+            <div class="col-3">
+                <a asp-action="Index" class="btn btn-success form-control">Zurück zur Liste</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}   

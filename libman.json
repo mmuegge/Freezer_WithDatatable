@@ -1,0 +1,36 @@
+{
+    "version": "1.0",
+    "defaultProvider": "cdnjs",
+    "libraries": [
+      {
+        "library": "node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "provider": "filesystem",
+        "destination": "wwwroot/js/bootstrap"
+      },
+      {
+        "library": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "provider": "filesystem",
+        "destination": "wwwroot/css/bootstrap"
+      },
+      {
+        "library": "node_modules/moment/min/moment.min.js",
+        "provider": "filesystem",
+        "destination": "wwwroot/js/moment"
+      },
+      {
+        "library": "node_modules/datetime-js/dist/datetime.min.js",
+        "provider": "filesystem",
+        "destination": "wwwroot/js/datetime"
+      },
+      {
+        "library": "node_modules/sweetalert2/dist/sweetalert2.min.css",
+        "provider": "filesystem",
+        "destination": "wwwroot/js/sweetalert2"
+      },
+      {
+        "library": "node_modules/datatables.net/js/jquery.dataTables.min.js",
+        "provider": "filesystem",
+        "destination": "wwwroot/js/datatables"
+      }
+    ]
+}
